@@ -1,0 +1,17 @@
+<%- include('../partials/header') %>
+<h1><%= titulo %></h1>
+<% if (erro) { %><p class="aviso erro"><%= erro %></p><% } %>
+<form action="<%= acao %>" method="post" class="form">
+  <label for="pet_id">Pet</label>
+  <select id="pet_id" name="pet_id" required>
+    <option value="">Selecione</option>
+    <% pets.forEach((pet) => { %><option value="<%= pet.id %>" <%= Number(agendamento.pet_id) === pet.id ? 'selected' : '' %>><%= pet.nome %> (<%= pet.tutor_nome %>)</option><% }) %>
+  </select>
+  <label for="data_hora">Data e hora</label>
+  <input id="data_hora" name="data_hora" type="datetime-local" required value="<%= agendamento.data_hora || '' %>">
+  <p>
+    <button type="submit" <%= pets.length ? '' : 'disabled' %>>Salvar</button>
+    <a href="/agendamentos">Cancelar</a>
+  </p>
+</form>
+<%- include('../partials/footer') %>

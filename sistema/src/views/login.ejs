@@ -1,0 +1,11 @@
+<%- include('partials/header') %>
+<h1>Entrar</h1>
+<% if (erro) { %><p class="aviso erro"><%= erro %></p><% } %>
+<form action="/login" method="post" class="form">
+  <label for="username">Usuário</label>
+  <input id="username" name="username" autocomplete="username" required value="<%= usuarioInformado %>">
+  <label for="password">Senha</label>
+  <input id="password" name="password" type="password" autocomplete="current-password" required>
+  <button type="submit">Entrar</button>
+</form>
+<%- include('partials/footer') %>

@@ -1,0 +1,19 @@
+<%- include('../partials/header') %>
+<h1>Tutores</h1>
+<p><a href="/tutores/novo">Novo tutor</a></p>
+<table>
+  <tr><th>Nome</th><th>CPF</th><th>Contato</th><th>Ações</th></tr>
+  <% if (!tutores.length) { %><tr><td colspan="4">Nenhum tutor cadastrado.</td></tr><% } %>
+  <% tutores.forEach((tutor) => { %>
+  <tr>
+    <td><%= tutor.nome %></td>
+    <td><%= tutor.cpfExibicao %></td>
+    <td><%= tutor.email || tutor.telefone || '' %></td>
+    <td>
+      <a href="/tutores/<%= tutor.id %>/editar">Editar</a>
+      <form action="/tutores/<%= tutor.id %>/excluir" method="post" onsubmit="return confirm('Excluir este tutor?')"><button type="submit">Excluir</button></form>
+    </td>
+  </tr>
+  <% }) %>
+</table>
+<%- include('../partials/footer') %>

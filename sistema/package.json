@@ -1,0 +1,22 @@
+{
+  "name": "saep-clinica-veterinaria",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Sistema de gestão de clínica veterinária — SAEP/SENAI",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "packageManager": "npm@10.9.9",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.5.0",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "express-session": "^1.18.1",
+    "mysql2": "^3.14.0"
+  }
+}

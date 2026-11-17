@@ -1,0 +1,19 @@
+<%- include('../partials/header') %>
+<h1>Agendamentos</h1>
+<p><a href="/agendamentos/novo">Novo agendamento</a></p>
+<table>
+  <tr><th>Data e hora</th><th>Pet</th><th>Tutor</th><th>Ações</th></tr>
+  <% if (!agendamentos.length) { %><tr><td colspan="4">Nenhum agendamento cadastrado.</td></tr><% } %>
+  <% agendamentos.forEach((a) => { %>
+  <tr>
+    <td><%= String(a.data_hora).slice(0, 16) %></td>
+    <td><%= a.pet_nome %></td>
+    <td><%= a.tutor_nome %></td>
+    <td>
+      <a href="/agendamentos/<%= a.id %>/editar">Editar</a>
+      <form action="/agendamentos/<%= a.id %>/excluir" method="post" onsubmit="return confirm('Excluir este agendamento?')"><button type="submit">Excluir</button></form>
+    </td>
+  </tr>
+  <% }) %>
+</table>
+<%- include('../partials/footer') %>

@@ -1,0 +1,23 @@
+<%- include('../partials/header') %>
+<h1><%= titulo %></h1>
+<% if (erro) { %><p class="aviso erro"><%= erro %></p><% } %>
+<form action="<%= acao %>" method="post" class="form">
+  <label for="nome">Nome</label>
+  <input id="nome" name="nome" required maxlength="80" value="<%= pet.nome || '' %>">
+  <label for="tutor_id">Tutor</label>
+  <select id="tutor_id" name="tutor_id" required>
+    <option value="">Selecione</option>
+    <% tutores.forEach((tutor) => { %><option value="<%= tutor.id %>" <%= Number(pet.tutor_id) === tutor.id ? 'selected' : '' %>><%= tutor.nome %></option><% }) %>
+  </select>
+  <label for="especie">Espécie</label>
+  <input id="especie" name="especie" required maxlength="50" value="<%= pet.especie || '' %>">
+  <label for="raca">Raça</label>
+  <input id="raca" name="raca" maxlength="80" value="<%= pet.raca || '' %>">
+  <label for="data_nascimento">Nascimento</label>
+  <input id="data_nascimento" name="data_nascimento" type="date" value="<%= pet.data_nascimento || '' %>">
+  <p>
+    <button type="submit" <%= tutores.length ? '' : 'disabled' %>>Salvar</button>
+    <a href="/pets">Cancelar</a>
+  </p>
+</form>
+<%- include('../partials/footer') %>

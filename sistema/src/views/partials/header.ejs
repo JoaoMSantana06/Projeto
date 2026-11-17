@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title><%= titulo %></title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<% if (usuario) { %>
+<nav>
+  <a href="/tutores">Tutores</a>
+  <a href="/pets">Pets</a>
+  <a href="/agendamentos">Agendamentos</a>
+  <form action="/logout" method="post"><button type="submit">Sair</button></form>
+</nav>
+<% } %>
+<main>

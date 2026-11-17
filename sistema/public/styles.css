@@ -1,0 +1,19 @@
+body { margin: 0; padding: 16px; font: 15px/1.5 Arial, sans-serif; color: #111; background: #fff; }
+main { max-width: 900px; margin: 0 auto; }
+nav { max-width: 900px; margin: 0 auto 20px; padding-bottom: 10px; border-bottom: 1px solid #ccc; }
+nav a, nav button { margin-right: 14px; font: inherit; }
+nav form { display: inline; }
+h1 { font-size: 20px; margin: 0 0 16px; }
+a { color: #0645ad; }
+table { width: 100%; border-collapse: collapse; margin-bottom: 16px; }
+th, td { padding: 6px 8px; border: 1px solid #ccc; text-align: left; vertical-align: top; }
+th { background: #eee; }
+td form { display: inline; margin-left: 8px; }
+td button { font: inherit; padding: 0; border: 0; background: none; color: #0645ad; cursor: pointer; text-decoration: underline; }
+.form { max-width: 420px; }
+.form label { display: block; margin-top: 10px; }
+.form input, .form select { width: 100%; padding: 6px; font: inherit; box-sizing: border-box; }
+.form button { margin-top: 16px; padding: 6px 14px; font: inherit; }
+.aviso { padding: 8px 10px; border: 1px solid #999; }
+.aviso.erro { background: #fdd; }
+.aviso.sucesso { background: #dfd; }
